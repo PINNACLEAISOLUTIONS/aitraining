@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Hub - Master AI & Explore LLM Models</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>AI Learning Hub</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#roadmap" class="nav-link">Roadmap</a>
+                <a href="#models" class="nav-link">LLM Models</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#api-guide" class="nav-link">API Guide</a>
+                <button id="theme-toggle" class="btn btn--outline">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Master AI & Explore LLM Models</h1>
+                <p class="hero-subtitle">Your comprehensive guide to learning artificial intelligence and accessing the world's most powerful language models</p>
+                <div class="hero-actions">
+                    <a href="#roadmap" class="btn btn--primary btn--lg">Start Learning</a>
+                    <a href="#models" class="btn btn--outline btn--lg">Explore Models</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Search models, resources, or topics..." class="form-control search-input">
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Learning Roadmap -->
+    <section id="roadmap" class="roadmap-section">
+        <div class="container">
+            <h2 class="section-title">AI Learning Roadmap</h2>
+            <p class="section-subtitle">Choose your path and start your AI journey</p>
+            <div class="roadmap-grid">
+                <div class="roadmap-card" data-level="beginner">
+                    <div class="level-badge level-beginner">Beginner</div>
+                    <h3>Foundation Level</h3>
+                    <p class="duration">2-3 months</p>
+                    <ul class="topics-list">
+                        <li>What is AI and Machine Learning</li>
+                        <li>Python Programming Basics</li>
+                        <li>Statistics and Probability</li>
+                        <li>First AI Project</li>
+                        <li>Understanding Neural Networks</li>
+                    </ul>
+                    <div class="resources-preview">
+                        <strong>Key Resources:</strong>
+                        <p>Andrew Ng's AI for Everyone, Python for Everybody</p>
+                    </div>
+                </div>
+                
+                <div class="roadmap-card" data-level="intermediate">
+                    <div class="level-badge level-intermediate">Intermediate</div>
+                    <h3>Development Level</h3>
+                    <p class="duration">4-6 months</p>
+                    <ul class="topics-list">
+                        <li>Machine Learning Algorithms</li>
+                        <li>Deep Learning Fundamentals</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision Basics</li>
+                        <li>Model Training and Evaluation</li>
+                    </ul>
+                    <div class="resources-preview">
+                        <strong>Key Resources:</strong>
+                        <p>Stanford ML Course, Deep Learning Specialization</p>
+                    </div>
+                </div>
+                
+                <div class="roadmap-card" data-level="advanced">
+                    <div class="level-badge level-advanced">Advanced</div>  
+                    <h3>Expert Level</h3>
+                    <p class="duration">6+ months</p>
+                    <ul class="topics-list">
+                        <li>Transformer Architecture</li>
+                        <li>Large Language Models</li>
+                        <li>Reinforcement Learning</li>
+                        <li>MLOps and Deployment</li>
+                        <li>Research and Custom Models</li>
+                    </ul>
+                    <div class="resources-preview">
+                        <strong>Key Resources:</strong>
+                        <p>Attention Is All You Need, Hugging Face Course</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLM Models Directory -->
+    <section id="models" class="models-section">
+        <div class="container">
+            <h2 class="section-title">LLM Models Directory</h2>
+            <p class="section-subtitle">Explore and access the world's most powerful language models</p>
+            
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="developer-filter">Developer:</label>
+                    <select id="developer-filter" class="form-control">
+                        <option value="">All Developers</option>
+                        <option value="OpenAI">OpenAI</option>
+                        <option value="Anthropic">Anthropic</option>
+                        <option value="Google DeepMind">Google DeepMind</option>
+                        <option value="Meta AI">Meta AI</option>
+                        <option value="xAI">xAI</option>
+                        <option value="DeepSeek">DeepSeek</option>
+                        <option value="Mistral AI">Mistral AI</option>
+                        <option value="Alibaba">Alibaba</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="access-filter">Access Type:</label>
+                    <select id="access-filter" class="form-control">
+                        <option value="">All Types</option>
+                        <option value="API">API</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="API & Open Source">API & Open Source</option>
+                    </select>
+                </div>
+                <button id="clear-filters" class="btn btn--secondary">Clear Filters</button>
+            </div>
+
+            <!-- Models Grid -->
+            <div id="models-grid" class="models-grid">
+                <!-- Models will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Resources -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Learning Resources</h2>
+            <p class="section-subtitle">Curated resources for every skill level</p>
+            
+            <div class="resources-tabs">
+                <button class="tab-btn active" data-tab="platforms">Platforms</button>
+                <button class="tab-btn" data-tab="courses">Free Courses</button>
+                <button class="tab-btn" data-tab="books">Books & Papers</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="platforms" class="tab-pane active">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4>Coursera</h4>
+                            <p class="resource-type">University Courses</p>
+                            <p>University-quality courses from top institutions</p>
+                            <div class="pricing">Free to audit, $39-79/month for certificates</div>
+                            <div class="highlights">
+                                <span class="highlight-tag">Andrew Ng courses</span>
+                                <span class="highlight-tag">Stanford ML</span>
+                                <span class="highlight-tag">IBM AI</span>
+                            </div>
+                            <a href="https://coursera.org" target="_blank" class="btn btn--primary">Visit Platform</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>DeepLearning.AI</h4>
+                            <p class="resource-type">Specialized Platform</p>
+                            <p>AI-focused education by Andrew Ng</p>
+                            <div class="pricing">Free short courses, paid specializations</div>
+                            <div class="highlights">
+                                <span class="highlight-tag">Hands-on projects</span>
+                                <span class="highlight-tag">Industry experts</span>
+                                <span class="highlight-tag">Latest AI trends</span>
+                            </div>
+                            <a href="https://deeplearning.ai" target="_blank" class="btn btn--primary">Visit Platform</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Kaggle Learn</h4>
+                            <p class="resource-type">Practical Learning</p>
+                            <p>Micro-courses with hands-on practice</p>
+                            <div class="pricing free">Free</div>
+                            <div class="highlights">
+                                <span class="highlight-tag">Practical datasets</span>
+                                <span class="highlight-tag">Competition ready</span>
+                                <span class="highlight-tag">Certificates</span>
+                            </div>
+                            <a href="https://kaggle.com/learn" target="_blank" class="btn btn--primary">Visit Platform</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Fast.ai</h4>
+                            <p class="resource-type">Practical Courses</p>
+                            <p>Top-down practical approach to deep learning</p>
+                            <div class="pricing free">Free</div>
+                            <div class="highlights">
+                                <span class="highlight-tag">Code-first approach</span>
+                                <span class="highlight-tag">State-of-art techniques</span>
+                                <span class="highlight-tag">Real projects</span>
+                            </div>
+                            <a href="https://fast.ai" target="_blank" class="btn btn--primary">Visit Platform</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="courses" class="tab-pane">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4>CS229: Machine Learning</h4>
+                            <p class="resource-type">Stanford University</p>
+                            <p>Comprehensive introduction to machine learning and statistical pattern recognition</p>
+                            <div class="pricing free">Free</div>
+                            <a href="https://cs229.stanford.edu/" target="_blank" class="btn btn--primary">Start Course</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>MIT 6.034 Artificial Intelligence</h4>
+                            <p class="resource-type">MIT OpenCourseWare</p>
+                            <p>Introduction to representation, problem solving, and learning methods of AI</p>
+                            <div class="pricing free">Free</div>
+                            <a href="https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/" target="_blank" class="btn btn--primary">Start Course</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>CS231n: Convolutional Neural Networks</h4>
+                            <p class="resource-type">Stanford University</p>
+                            <p>Visual recognition course covering deep learning for computer vision</p>
+                            <div class="pricing free">Free</div>
+                            <a href="https://cs231n.github.io/" target="_blank" class="btn btn--primary">Start Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="books" class="tab-pane">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h4>Attention Is All You Need</h4>
+                            <p class="resource-type">Research Paper</p>
+                            <p>The foundational paper that introduced the Transformer architecture</p>
+                            <div class="pricing free">Free</div>
+                            <a href="https://arxiv.org/abs/1706.03762" target="_blank" class="btn btn--primary">Read Paper</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Deep Learning</h4>
+                            <p class="resource-type">Book by Ian Goodfellow</p>
+                            <p>Comprehensive textbook on deep learning methods and applications</p>
+                            <div class="pricing free">Free Online</div>
+                            <a href="https://www.deeplearningbook.org/" target="_blank" class="btn btn--primary">Read Book</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Pattern Recognition and Machine Learning</h4>
+                            <p class="resource-type">Book by Christopher Bishop</p>
+                            <p>Mathematical foundations of machine learning and pattern recognition</p>
+                            <div class="pricing">Purchase Required</div>
+                            <a href="https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/" target="_blank" class="btn btn--primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Access Guide -->
+    <section id="api-guide" class="api-guide-section">
+        <div class="container">
+            <h2 class="section-title">API Access Guide</h2>
+            <p class="section-subtitle">Get started with LLM APIs quickly and easily</p>
+            
+            <div class="api-guides-grid">
+                <div class="api-guide-card">
+                    <div class="provider-header">
+                        <h3>OpenAI</h3>
+                        <div class="models-supported">GPT-4.5, GPT-o3, GPT-4o</div>
+                    </div>
+                    <div class="guide-content">
+                        <div class="pricing-info">
+                            <strong>Pricing:</strong> Pay-per-token
+                        </div>
+                        <div class="auth-info">
+                            <strong>Authentication:</strong> API Key
+                        </div>
+                        <div class="code-sample">
+                            <strong>Quick Start:</strong>
+                            <pre><code>from openai import OpenAI
+client = OpenAI(api_key='your-key')
+response = client.chat.completions.create(...)</code></pre>
+                        </div>
+                        <a href="https://platform.openai.com/docs/quickstart" target="_blank" class="btn btn--primary">Full Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="api-guide-card">
+                    <div class="provider-header">
+                        <h3>Anthropic</h3>
+                        <div class="models-supported">Claude 3.7 Sonnet, Claude 3.5 Sonnet</div>
+                    </div>
+                    <div class="guide-content">
+                        <div class="pricing-info">
+                            <strong>Pricing:</strong> Pay-per-token
+                        </div>
+                        <div class="auth-info">
+                            <strong>Authentication:</strong> API Key
+                        </div>
+                        <div class="code-sample">
+                            <strong>Quick Start:</strong>
+                            <pre><code>import anthropic
+client = anthropic.Anthropic(api_key='your-key')
+message = client.messages.create(...)</code></pre>
+                        </div>
+                        <a href="https://docs.anthropic.com/en/home" target="_blank" class="btn btn--primary">Full Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="api-guide-card">
+                    <div class="provider-header">
+                        <h3>Google</h3>
+                        <div class="models-supported">Gemini 2.5 Pro, Gemini 1.5 Pro</div>
+                    </div>
+                    <div class="guide-content">
+                        <div class="pricing-info">
+                            <strong>Pricing:</strong> Free tier + Pay-per-use
+                        </div>
+                        <div class="auth-info">
+                            <strong>Authentication:</strong> API Key
+                        </div>
+                        <div class="code-sample">
+                            <strong>Quick Start:</strong>
+                            <pre><code>import google.generativeai as genai
+genai.configure(api_key='your-key')
+model = genai.GenerativeModel('gemini-pro')</code></pre>
+                        </div>
+                        <a href="https://ai.google.dev/gemini-api/docs" target="_blank" class="btn btn--primary">Full Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI Learning Hub</h4>
+                    <p>Your gateway to mastering artificial intelligence and accessing cutting-edge language models.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#roadmap">Learning Roadmap</a></li>
+                        <li><a href="#models">LLM Models</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#api-guide">API Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="https://arxiv.org" target="_blank">Research Papers</a></li>
+                        <li><a href="https://huggingface.co" target="_blank">Hugging Face</a></li>
+                        <li><a href="https://github.com" target="_blank">Open Source</a></li>
+                        <li><a href="https://kaggle.com" target="_blank">Datasets</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Learning Hub. Educational resource for AI enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
